@@ -43,5 +43,5 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"SolucionWebsite_SistemaTurismoReal" /o:"solucionwebsite" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          msbuild "C:\Users\franc\source\repos\SistemaTurismoReal\SistemaTurismoReal.sln"
+          dotnet msbuild "C:\Users\franc\source\repos\SistemaTurismoReal\SistemaTurismoReal\SistemaTurismoReal.GUI.csproj"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
